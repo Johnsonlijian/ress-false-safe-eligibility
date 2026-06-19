@@ -52,6 +52,14 @@ python scripts/check_public_package.py
 
 The scan checks for common private path markers, internal workflow markers, active-submission files, and raw-data archive patterns. It is a guardrail, not a substitute for human inspection before publication.
 
+## Check release readiness
+
+```bash
+python scripts/check_release_ready.py
+```
+
+The release-ready check is stricter than the package-cleanliness check. In the local staging state, it should fail until `CITATION.cff` is updated with final author-approved citation metadata. See `RELEASE_GATE.md`.
+
 ## Interpreting included tables
 
 - `calibration_gate_summary.csv`: calibration-gate behavior by scenario and risk level.
@@ -76,4 +84,4 @@ Those steps require data or artifacts that are not redistributed here.
 
 ## Fast review path
 
-For a short inspection sequence, use `ARTIFACT_QUICKSTART.md`. For a claim-to-artifact map, use `ARTIFACT_SCOPE.md`.
+For a short inspection sequence, use `ARTIFACT_QUICKSTART.md`. For a claim-to-artifact map, use `ARTIFACT_SCOPE.md`. For public release blockers, use `RELEASE_GATE.md`.

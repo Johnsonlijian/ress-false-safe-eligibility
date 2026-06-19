@@ -15,6 +15,7 @@ The package is intentionally narrow. It contains derived, non-sensitive CSV tabl
 - `scripts/check_public_package.py`: scans the repository for common private-path, workflow, and raw-data leakage markers.
 - `DATASETS_AND_LINKS.csv`: upstream dataset and standards links used by the study.
 - `REPRODUCIBLE_RUNBOOK.md`: step-by-step reproduction notes and scope boundaries.
+- `RELEASE_GATE.md`: human-only public-release blockers and final commands.
 
 ## What can be reproduced from this public package
 
@@ -47,3 +48,5 @@ For a claim-by-claim boundary map, see `ARTIFACT_SCOPE.md`.
 ## Repository status
 
 This is a local, GitHub-ready staging package. Repository creation and pushing to GitHub are intentionally left as human-approved actions.
+
+Before public release, follow `RELEASE_GATE.md`. The staging package can pass `scripts/check_public_package.py` while `scripts/check_release_ready.py` intentionally fails until final author-approved citation metadata is inserted into `CITATION.cff`.

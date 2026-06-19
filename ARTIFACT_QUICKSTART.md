@@ -31,6 +31,14 @@ The PGA-only shift script may refresh these files:
 
 `scripts/write_manifest.py` then refreshes `MANIFEST.csv`.
 
+## Before public release
+
+The quickstart above checks the artifact package. It does not clear the package for public release. Before creating or pushing the public repository, follow `RELEASE_GATE.md` and run:
+
+```bash
+python scripts/check_release_ready.py
+```
+
 ## What to inspect first
 
 1. `ARTIFACT_SCOPE.md` for the claim-to-artifact map.

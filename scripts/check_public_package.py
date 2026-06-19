@@ -51,9 +51,11 @@ REQUIRED_FILES = {
     "CITATION.cff",
     "LICENSE",
     "MANIFEST.csv",
+    "RELEASE_GATE.md",
     "requirements.txt",
     "scripts/rebuild_pga_shift_figure.py",
     "scripts/write_manifest.py",
+    "scripts/check_release_ready.py",
 }
 
 
