@@ -1,0 +1,4 @@
+source_distribution,target_distribution,source_n,target_n,source_mean_pga_g,target_mean_pga_g,standardized_mean_difference_target_minus_source,ks_statistic,overlap_coefficient_histogram,note
+local_P695_scaled_analysis_all_sets,ESM_scaled_holdout_analysis,720,100,0.44092657303240734,1.155082003995776,1.6796459433240154,0.48694444444444446,0.49666666666666665,Most comparable available response-analysis PGA comparison; both sides are scaled analysis inputs.
+local_P695_scaled_analysis_farfield_only,ESM_scaled_holdout_analysis,308,100,0.3683482543831169,1.155082003995776,1.7187860950627132,0.5576623376623376,0.4461038961038961,Farfield-only sensitivity using packaged derived source-analysis values.
+local_P695_scaled_analysis_all_sets,ESM_raw_record_package,720,48,0.44092657303240734,0.6626867012431225,0.6495129889381869,0.5347222222222222,0.38333333333333336,Less comparable diagnostic: scaled source analyses versus raw selected-record PGA metadata.

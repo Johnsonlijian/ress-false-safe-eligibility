@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Local/private working material.
+rounds/
+logs/
+manuscript/
+submission/
+cover_letter*
+reviewer*
+gate*
+*.docx
+
+# Raw third-party ground-motion or simulation data are intentionally excluded.
+data/raw/
+*.npz
+*.h5
+*.hdf5
+*.zip
+*.7z
+*.rar

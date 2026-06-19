@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, please cite the associated manuscript and this repository."
+title: "Reproducibility package for false-safe eligibility auditing of machine-learning seismic-demand surrogates"
+type: software
+version: 0.1.0
+date-released: 2026-06-19
+authors:
+  - name: "Author metadata to be completed before public release"
+repository-code: "https://github.com/Johnsonlijian/ress-false-safe-eligibility"

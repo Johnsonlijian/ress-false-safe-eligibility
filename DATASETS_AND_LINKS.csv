@@ -1,0 +1,8 @@
+name,type,url_or_doi,included_in_repository,notes
+Engineering Strong Motion Database version 3.0,third-party dataset,https://doi.org/10.13127/esm.3,no,Raw ground-motion records are not redistributed; only derived result tables are included.
+ESM event data web service,official service,https://esm-db.eu/esmws/eventdata/1/,no,Official service endpoint for event metadata and record access.
+FEMA P-58 reports,official report set,https://femap58.atcouncil.org/reports,no,Referenced performance-assessment methodology; official reports must be obtained from FEMA/ATC.
+FEMA P-695 ground-motion package,third-party record package,https://github.com/NHERI-SimCenter/fema-p695,no,Raw records are not redistributed; derived response-analysis PGA summaries are included.
+IEC 61508-1:2010,standard,https://webstore.iec.ch/en/publication/5515,no,Functional-safety framing reference; standard text is not redistributed.
+Packaged derived tables,derived outputs,data/derived,yes,Non-sensitive summary and per-split tables exported from existing scored predictions.
+Packaged figures,derived outputs,figures,yes,SVG/PDF/PNG figure exports generated from derived analysis outputs.
