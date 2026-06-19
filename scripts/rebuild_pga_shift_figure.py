@@ -166,7 +166,11 @@ def main() -> None:
     ax.legend(frameon=False, fontsize=8)
     fig.tight_layout()
     for ext in ("png", "pdf", "svg"):
-        fig.savefig(FIGURES / f"figure_6_pga_shift_existing_derivatives.{ext}", dpi=300)
+        output_path = FIGURES / f"figure_6_pga_shift_existing_derivatives.{ext}"
+        fig.savefig(output_path, dpi=300)
+        if ext == "svg":
+            lines = output_path.read_text(encoding="utf-8").splitlines()
+            output_path.write_text("\n".join(line.rstrip() for line in lines) + "\n", encoding="utf-8")
     plt.close(fig)
 
 

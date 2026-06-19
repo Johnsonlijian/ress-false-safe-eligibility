@@ -8,7 +8,10 @@ The package is intentionally narrow. It contains derived, non-sensitive CSV tabl
 
 - `data/derived/`: derived tables used in the reliability-gate and shift analyses.
 - `figures/`: exported manuscript figures in SVG, PDF, and PNG formats.
+- `ARTIFACT_QUICKSTART.md`: a short path for checking the package in a few minutes.
+- `ARTIFACT_SCOPE.md`: a table mapping claims, files, and reproducibility boundaries.
 - `scripts/rebuild_pga_shift_figure.py`: rebuilds the PGA-only source-shift summary and figure from the packaged derived input table.
+- `scripts/write_manifest.py`: rebuilds `MANIFEST.csv` with file sizes and SHA-256 hashes.
 - `scripts/check_public_package.py`: scans the repository for common private-path, workflow, and raw-data leakage markers.
 - `DATASETS_AND_LINKS.csv`: upstream dataset and standards links used by the study.
 - `REPRODUCIBLE_RUNBOOK.md`: step-by-step reproduction notes and scope boundaries.
@@ -29,6 +32,7 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 python scripts/rebuild_pga_shift_figure.py
+python scripts/write_manifest.py
 python scripts/check_public_package.py
 ```
 
@@ -37,6 +41,8 @@ On macOS/Linux, use `source .venv/bin/activate` instead of the Windows activatio
 ## Public-data boundary
 
 Raw strong-motion records and third-party archives are not redistributed. Users should obtain upstream data from the official sources listed in `DATASETS_AND_LINKS.csv` and respect each provider's license and access conditions.
+
+For a claim-by-claim boundary map, see `ARTIFACT_SCOPE.md`.
 
 ## Repository status
 

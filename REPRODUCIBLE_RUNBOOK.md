@@ -9,8 +9,12 @@ This package supports public verification of the derived evidence used for false
 Use Python 3.10 or newer.
 
 ```bash
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
+On macOS/Linux, use `source .venv/bin/activate` instead of the Windows activation command.
 
 ## Rebuild the PGA-only shift check
 
@@ -27,6 +31,18 @@ Expected outputs:
 - `figures/figure_6_pga_shift_existing_derivatives.svg`
 
 The script reads only `data/derived/pga_shift_inputs_derived.csv`. It does not access raw accelerograms, private paths, OpenSees outputs, or internal manuscript rounds.
+
+## Rebuild the file manifest
+
+```bash
+python scripts/write_manifest.py
+```
+
+Expected output:
+
+- `MANIFEST.csv`
+
+The manifest records relative paths, file sizes, and SHA-256 hashes. Paths use forward slashes so the file is stable across operating systems.
 
 ## Check package cleanliness
 
@@ -57,3 +73,7 @@ The public package does not rerun:
 - raw record preprocessing.
 
 Those steps require data or artifacts that are not redistributed here.
+
+## Fast review path
+
+For a short inspection sequence, use `ARTIFACT_QUICKSTART.md`. For a claim-to-artifact map, use `ARTIFACT_SCOPE.md`.

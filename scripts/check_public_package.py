@@ -42,6 +42,20 @@ FORBIDDEN_FILE_PATTERNS = [
     re.compile(r"\.rar$", re.IGNORECASE),
 ]
 
+REQUIRED_FILES = {
+    "README.md",
+    "REPRODUCIBLE_RUNBOOK.md",
+    "ARTIFACT_QUICKSTART.md",
+    "ARTIFACT_SCOPE.md",
+    "DATASETS_AND_LINKS.csv",
+    "CITATION.cff",
+    "LICENSE",
+    "MANIFEST.csv",
+    "requirements.txt",
+    "scripts/rebuild_pga_shift_figure.py",
+    "scripts/write_manifest.py",
+}
+
 
 def iter_files() -> list[Path]:
     return [p for p in ROOT.rglob("*") if p.is_file() and ".git" not in p.parts]
@@ -49,6 +63,17 @@ def iter_files() -> list[Path]:
 
 def main() -> None:
     hits: list[str] = []
+    existing = {p.relative_to(ROOT).as_posix() for p in iter_files()}
+    for required in sorted(REQUIRED_FILES):
+        if required not in existing:
+            hits.append(f"required file missing: {required}")
+
+    manifest = ROOT / "MANIFEST.csv"
+    if manifest.exists():
+        manifest_text = manifest.read_text(encoding="utf-8", errors="replace")
+        if "\\" in manifest_text:
+            hits.append("MANIFEST.csv contains backslash path separators")
+
     for path in iter_files():
         rel = path.relative_to(ROOT).as_posix()
         for pattern in FORBIDDEN_FILE_PATTERNS:
