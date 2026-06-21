@@ -26,6 +26,24 @@ The public package does not rerun private per-row scoring. It supports a bounded
 | Margin gate and acceptance boundary | `data/derived/margin_robustness_by_k_tau.csv`; `figures/figure_5_robustness_existing_scores.*` | Confirms false-safe and coverage summaries across adaptation size, threshold band, and margin |
 | Event-conditioned robustness | `data/derived/event_robustness_summary.csv`; `figures/figure_5_robustness_existing_scores.*` | Confirms the reported event-conditioned robustness summary used to localize residual exposure |
 | Source-shift stress test | `data/derived/ground_motion_im_shift_inputs_derived.csv`; `data/derived/ground_motion_im_shift_summary.csv`; `data/derived/ground_motion_im_shift_comparison.csv`; `figures/figure_6_ground_motion_im_shift_existing_derivatives.*` | Rebuilds the multi-intensity-measure shift summaries and plotted diagnostic from packaged derived values |
+| Cross-system eligibility and head-to-head check | `data/derived/final_manuscript/classical_baseline_6family_false_safe.csv`; `data/derived/final_manuscript/wp2_rep_oof_false_safe.csv`; `data/derived/final_manuscript/table_wp2_rep_vs_classical*.csv`; `figures/final_manuscript/figure_2_cross_system_eligibility.*`; `figures/final_manuscript/figure_5_safety_coverage_frontier.*`; `figures/final_manuscript/figure_6_eligibility_map.*` | Rebuilds final manuscript Figures 2, 5, and 6 from packaged summary tables and checks the cross-system false-safe pattern |
+
+## Rebuild selected final manuscript figures
+
+```bash
+python scripts/rebuild_final_manuscript_figures.py
+```
+
+Expected outputs:
+
+- `figures/final_manuscript/figure_2_cross_system_eligibility.png`
+- `figures/final_manuscript/figure_2_cross_system_eligibility.pdf`
+- `figures/final_manuscript/figure_5_safety_coverage_frontier.png`
+- `figures/final_manuscript/figure_5_safety_coverage_frontier.pdf`
+- `figures/final_manuscript/figure_6_eligibility_map.png`
+- `figures/final_manuscript/figure_6_eligibility_map.pdf`
+
+The script reads only summary tables under `data/derived/final_manuscript/`. It does not access per-row predictions, model checkpoints, raw accelerograms, private paths, OpenSees outputs, or internal manuscript rounds.
 
 ## Rebuild the ground-motion intensity-measure shift check
 
@@ -80,6 +98,9 @@ The release-ready check is stricter than the package-cleanliness check. In the l
 - `ground_motion_im_shift_summary.csv`: distribution-level summaries for PGA, Sa(T1), significant duration D5-95, Arias intensity, and Fourier mean period.
 - `ground_motion_im_shift_comparison.csv`: standardized mean difference, KS statistic, and histogram overlap for intensity-measure comparisons.
 - `ground_motion_im_shift_inputs_derived.csv`: derived intensity-measure values used to rebuild the shift check.
+- `final_manuscript/classical_baseline_6family_false_safe.csv`: six-system false-safe and coverage summary for the classical baseline.
+- `final_manuscript/wp2_rep_oof_false_safe.csv`: same-engine REP false-safe summary for the systems used in the head-to-head panel.
+- `final_manuscript/table_wp2_rep_vs_classical*.csv`: compact head-to-head comparison tables.
 
 ## Non-reproduced steps
 

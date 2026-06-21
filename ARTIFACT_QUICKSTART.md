@@ -8,6 +8,7 @@ This package is designed for a short, bounded artifact check. It verifies derive
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+python scripts/rebuild_final_manuscript_figures.py
 python scripts/rebuild_ground_motion_im_shift_figure.py
 python scripts/write_manifest.py
 python scripts/check_public_package.py
@@ -20,6 +21,15 @@ source .venv/bin/activate
 ```
 
 ## What should change
+
+The final-manuscript rebuild script may refresh these files:
+
+- `figures/final_manuscript/figure_2_cross_system_eligibility.png`
+- `figures/final_manuscript/figure_2_cross_system_eligibility.pdf`
+- `figures/final_manuscript/figure_5_safety_coverage_frontier.png`
+- `figures/final_manuscript/figure_5_safety_coverage_frontier.pdf`
+- `figures/final_manuscript/figure_6_eligibility_map.png`
+- `figures/final_manuscript/figure_6_eligibility_map.pdf`
 
 The ground-motion intensity-measure shift script may refresh these files:
 
@@ -47,7 +57,8 @@ python scripts/check_release_ready.py
 4. `data/derived/margin_robustness_by_k_tau.csv` for threshold and adaptation-size robustness.
 5. `data/derived/event_robustness_summary.csv` for event-conditioned robustness.
 6. `data/derived/ground_motion_im_shift_comparison.csv` for the intensity-measure source-shift comparison.
-7. `figures/figure_4_calibration_gate_exchangeable_vs_shift.*`, `figure_5_robustness_existing_scores.*`, and `figure_6_ground_motion_im_shift_existing_derivatives.*` for the main diagnostic figures.
+7. `figures/final_manuscript/figure_*.pdf` and `figures/final_manuscript/figure_*.png` for the final manuscript figure exports.
+8. `figures/figure_4_calibration_gate_exchangeable_vs_shift.*`, `figure_5_robustness_existing_scores.*`, and `figure_6_ground_motion_im_shift_existing_derivatives.*` for the earlier staged diagnostic figures.
 
 ## What this package does not claim
 

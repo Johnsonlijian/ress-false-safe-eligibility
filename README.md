@@ -2,14 +2,17 @@
 
 This repository stages the public reproducibility package for a reliability and system-safety study of machine-learning seismic-demand surrogates under event-level distribution shift.
 
-The package is intentionally narrow. It contains derived, non-sensitive CSV tables, exported figures, and lightweight scripts needed to re-check the reported Algorithm 1 audit trail: calibration-gate diagnostics, margin and event robustness, and ground-motion intensity-measure shift summaries. It does not contain active submission manuscripts, cover letters, reviewer drafts, internal rounds, private logs, raw third-party ground-motion records, downloaded archives, or OpenSees response databases.
+The package is intentionally narrow. It contains derived, non-sensitive CSV tables, exported figures, and lightweight scripts needed to re-check the reported Algorithm 1 audit trail: calibration-gate diagnostics, cross-system false-safe summaries, margin and event robustness, and ground-motion intensity-measure shift summaries. It does not contain active submission manuscripts, cover letters, reviewer drafts, internal rounds, private logs, raw third-party ground-motion records, downloaded archives, or OpenSees response databases.
 
 ## Contents
 
 - `data/derived/`: derived tables used to trace the Algorithm 1 reliability-gated audit outputs and source-shift analyses.
+- `data/derived/final_manuscript/`: non-sensitive final-round summary tables used by the cross-system and head-to-head audit figures.
 - `figures/`: exported manuscript figures in SVG, PDF, and PNG formats.
+- `figures/final_manuscript/`: exported final manuscript figures in PDF and PNG formats.
 - `ARTIFACT_QUICKSTART.md`: a short path for checking the package in a few minutes.
 - `ARTIFACT_SCOPE.md`: a table mapping claims, files, and reproducibility boundaries.
+- `scripts/rebuild_final_manuscript_figures.py`: rebuilds the final manuscript cross-system head-to-head and eligibility-map figures from packaged summary tables.
 - `scripts/rebuild_ground_motion_im_shift_figure.py`: rebuilds the ground-motion intensity-measure source-shift summary and Figure 6 from the packaged derived input table.
 - `scripts/rebuild_pga_shift_figure.py`: legacy PGA-only rebuild script retained for continuity with earlier staged artifacts.
 - `scripts/write_manifest.py`: rebuilds `MANIFEST.csv` with file sizes and SHA-256 hashes.
@@ -22,9 +25,10 @@ The package is intentionally narrow. It contains derived, non-sensitive CSV tabl
 
 1. The public Algorithm 1 audit trace from derived calibration-gate, margin-robustness, event-robustness, and source-shift tables.
 2. The ground-motion intensity-measure source-shift summaries and comparison statistics.
-3. The ground-motion intensity-measure Figure 6.
-4. The already-derived calibration-gate and robustness result tables.
-5. The exported figure files used for manuscript review.
+3. The final cross-system head-to-head Figure 2 and classical-baseline Figures 5 and 6 from packaged summary tables.
+4. The ground-motion intensity-measure Figure 6 from the staged source-shift table.
+5. The already-derived calibration-gate and robustness result tables.
+6. The exported final manuscript figure files used for manuscript review.
 
 The public package does not rerun model training, model inference, OpenSees simulations, or ground-motion acquisition. Those steps depend on raw third-party data and internal response-analysis artifacts that are excluded from public release.
 
@@ -34,6 +38,7 @@ The public package does not rerun model training, model inference, OpenSees simu
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+python scripts/rebuild_final_manuscript_figures.py
 python scripts/rebuild_ground_motion_im_shift_figure.py
 python scripts/write_manifest.py
 python scripts/check_public_package.py

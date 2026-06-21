@@ -1,0 +1,4 @@
+family,raw_fs_unsafe,min_margin_for_0.01,coverage_there,verdict
+rc_wall,0.17367587541791307,0.5,0.42622637907997707,screenable@margin
+rcf_tall,0.17248255234297108,0.75,0.15333333333333332,screenable@margin
+steel_frame,0.30413223140495865,,0.4421310471524801,NOT reachable<=0.01 (best fs=0.160@m0.75)

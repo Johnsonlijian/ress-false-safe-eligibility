@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this reproducibility package, please cite this repository and the associated manuscript."
 title: "Reproducibility package for reliability-gated false-safe screening of seismic-demand surrogates"
 type: software
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-06-21
 authors:
   - family-names: REN
@@ -17,4 +17,4 @@ keywords:
   - risk control
   - selective prediction
   - distribution shift
-abstract: "Derived tables, figure scripts, and non-sensitive reproducibility materials for a reliability-gated false-safe eligibility audit of seismic-demand surrogate screening. Raw third-party strong-motion records and active submission manuscripts are not redistributed."
+abstract: "Derived tables, selected figure scripts, final figure exports, and non-sensitive reproducibility materials for a reliability-gated false-safe eligibility audit of seismic-demand surrogate screening. Raw third-party strong-motion records and active submission manuscripts are not redistributed."
