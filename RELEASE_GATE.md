@@ -7,7 +7,7 @@ This repository is the public reproducibility package for the associated RESS su
 - Re-run both package checks immediately before public push.
 - Confirm the public repository URL after the GitHub repository is created.
 - Create a versioned release.
-- Mint or attach an archive DOI when an archival service is available.
+- Mint or attach an archive DOI when an archival service is available. Release `v1.0.1` is archived at https://doi.org/10.5281/zenodo.20782420.
 
 ## Required commands before public release
 

@@ -1,5 +1,7 @@
 # False-safe eligibility auditing for seismic-demand surrogate screening
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20782420.svg)](https://doi.org/10.5281/zenodo.20782420)
+
 This repository stages the public reproducibility package for a reliability and system-safety study of machine-learning seismic-demand surrogates under event-level distribution shift.
 
 The package is intentionally narrow. It contains derived, non-sensitive CSV tables, exported figures, and lightweight scripts needed to re-check the reported Algorithm 1 audit trail: calibration-gate diagnostics, cross-system false-safe summaries, margin and event robustness, and ground-motion intensity-measure shift summaries. It does not contain active submission manuscripts, cover letters, reviewer drafts, internal rounds, private logs, raw third-party ground-motion records, downloaded archives, or OpenSees response databases.
@@ -54,6 +56,6 @@ For a claim-by-claim boundary map, see `ARTIFACT_SCOPE.md`.
 
 ## Repository status
 
-This is the public reproducibility package for the associated RESS submission. It is intended for GitHub release and archival deposition after the final package checks pass.
+This is the public reproducibility package for the associated RESS submission. Release `v1.0.1` is archived at https://doi.org/10.5281/zenodo.20782420.
 
 Before public release, follow `RELEASE_GATE.md`. The package should pass both `scripts/check_public_package.py` and `scripts/check_release_ready.py`.
