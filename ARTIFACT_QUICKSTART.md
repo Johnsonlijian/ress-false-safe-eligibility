@@ -8,7 +8,7 @@ This package is designed for a short, bounded artifact check. It verifies derive
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-python scripts/rebuild_pga_shift_figure.py
+python scripts/rebuild_ground_motion_im_shift_figure.py
 python scripts/write_manifest.py
 python scripts/check_public_package.py
 ```
@@ -21,13 +21,13 @@ source .venv/bin/activate
 
 ## What should change
 
-The PGA-only shift script may refresh these files:
+The ground-motion intensity-measure shift script may refresh these files:
 
-- `data/derived/pga_shift_summary.csv`
-- `data/derived/pga_shift_comparison.csv`
-- `figures/figure_6_pga_shift_existing_derivatives.png`
-- `figures/figure_6_pga_shift_existing_derivatives.pdf`
-- `figures/figure_6_pga_shift_existing_derivatives.svg`
+- `data/derived/ground_motion_im_shift_summary.csv`
+- `data/derived/ground_motion_im_shift_comparison.csv`
+- `figures/figure_6_ground_motion_im_shift_existing_derivatives.png`
+- `figures/figure_6_ground_motion_im_shift_existing_derivatives.pdf`
+- `figures/figure_6_ground_motion_im_shift_existing_derivatives.svg`
 
 `scripts/write_manifest.py` then refreshes `MANIFEST.csv`.
 
@@ -42,10 +42,12 @@ python scripts/check_release_ready.py
 ## What to inspect first
 
 1. `ARTIFACT_SCOPE.md` for the claim-to-artifact map.
-2. `data/derived/calibration_gate_summary.csv` for calibration-gate outcomes.
-3. `data/derived/margin_robustness_by_k_tau.csv` for threshold and adaptation-size robustness.
-4. `data/derived/pga_shift_comparison.csv` for the PGA-only source-shift comparison.
-5. `figures/figure_4_calibration_gate_exchangeable_vs_shift.*`, `figure_5_robustness_existing_scores.*`, and `figure_6_pga_shift_existing_derivatives.*` for the main diagnostic figures.
+2. `REPRODUCIBLE_RUNBOOK.md` for the Algorithm 1 audit-trace table.
+3. `data/derived/calibration_gate_summary.csv` for calibration-gate outcomes.
+4. `data/derived/margin_robustness_by_k_tau.csv` for threshold and adaptation-size robustness.
+5. `data/derived/event_robustness_summary.csv` for event-conditioned robustness.
+6. `data/derived/ground_motion_im_shift_comparison.csv` for the intensity-measure source-shift comparison.
+7. `figures/figure_4_calibration_gate_exchangeable_vs_shift.*`, `figure_5_robustness_existing_scores.*`, and `figure_6_ground_motion_im_shift_existing_derivatives.*` for the main diagnostic figures.
 
 ## What this package does not claim
 

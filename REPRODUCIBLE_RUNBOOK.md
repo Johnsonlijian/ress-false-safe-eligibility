@@ -16,21 +16,32 @@ pip install -r requirements.txt
 
 On macOS/Linux, use `source .venv/bin/activate` instead of the Windows activation command.
 
-## Rebuild the PGA-only shift check
+## Trace Algorithm 1 from public artifacts
+
+The public package does not rerun private per-row scoring. It supports a bounded check of the manuscript's Algorithm 1 audit sequence from derived, redistributable artifacts:
+
+| Algorithm 1 surface | Public artifact to inspect | Check enabled by this package |
+| --- | --- | --- |
+| Calibration-gate comparator | `data/derived/calibration_gate_summary.csv`; `data/derived/calibration_gate_by_split.csv`; `figures/figure_4_calibration_gate_exchangeable_vs_shift.*` | Confirms the reported calibration-gate scenarios, risk levels, feasibility/coverage summaries, and exchangeable-versus-shift diagnostic |
+| Margin gate and acceptance boundary | `data/derived/margin_robustness_by_k_tau.csv`; `figures/figure_5_robustness_existing_scores.*` | Confirms false-safe and coverage summaries across adaptation size, threshold band, and margin |
+| Event-conditioned robustness | `data/derived/event_robustness_summary.csv`; `figures/figure_5_robustness_existing_scores.*` | Confirms the reported event-conditioned robustness summary used to localize residual exposure |
+| Source-shift stress test | `data/derived/ground_motion_im_shift_inputs_derived.csv`; `data/derived/ground_motion_im_shift_summary.csv`; `data/derived/ground_motion_im_shift_comparison.csv`; `figures/figure_6_ground_motion_im_shift_existing_derivatives.*` | Rebuilds the multi-intensity-measure shift summaries and plotted diagnostic from packaged derived values |
+
+## Rebuild the ground-motion intensity-measure shift check
 
 ```bash
-python scripts/rebuild_pga_shift_figure.py
+python scripts/rebuild_ground_motion_im_shift_figure.py
 ```
 
 Expected outputs:
 
-- `data/derived/pga_shift_summary.csv`
-- `data/derived/pga_shift_comparison.csv`
-- `figures/figure_6_pga_shift_existing_derivatives.png`
-- `figures/figure_6_pga_shift_existing_derivatives.pdf`
-- `figures/figure_6_pga_shift_existing_derivatives.svg`
+- `data/derived/ground_motion_im_shift_summary.csv`
+- `data/derived/ground_motion_im_shift_comparison.csv`
+- `figures/figure_6_ground_motion_im_shift_existing_derivatives.png`
+- `figures/figure_6_ground_motion_im_shift_existing_derivatives.pdf`
+- `figures/figure_6_ground_motion_im_shift_existing_derivatives.svg`
 
-The script reads only `data/derived/pga_shift_inputs_derived.csv`. It does not access raw accelerograms, private paths, OpenSees outputs, or internal manuscript rounds.
+The script reads only `data/derived/ground_motion_im_shift_inputs_derived.csv`. It does not access raw accelerograms, private paths, OpenSees outputs, or internal manuscript rounds.
 
 ## Rebuild the file manifest
 
@@ -66,9 +77,9 @@ The release-ready check is stricter than the package-cleanliness check. In the l
 - `calibration_gate_by_split.csv`: per-split calibration-gate diagnostics.
 - `margin_robustness_by_k_tau.csv`: false-safe and coverage behavior across adaptation sizes, thresholds, and margins.
 - `event_robustness_summary.csv`: event-conditioned robustness summary.
-- `pga_shift_summary.csv`: distribution-level PGA summaries.
-- `pga_shift_comparison.csv`: standardized mean difference, KS statistic, and histogram overlap for PGA comparisons.
-- `pga_shift_inputs_derived.csv`: derived PGA values used to rebuild the PGA-only shift check.
+- `ground_motion_im_shift_summary.csv`: distribution-level summaries for PGA, Sa(T1), significant duration D5-95, Arias intensity, and Fourier mean period.
+- `ground_motion_im_shift_comparison.csv`: standardized mean difference, KS statistic, and histogram overlap for intensity-measure comparisons.
+- `ground_motion_im_shift_inputs_derived.csv`: derived intensity-measure values used to rebuild the shift check.
 
 ## Non-reproduced steps
 

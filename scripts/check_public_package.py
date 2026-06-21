@@ -53,6 +53,7 @@ REQUIRED_FILES = {
     "MANIFEST.csv",
     "RELEASE_GATE.md",
     "requirements.txt",
+    "scripts/rebuild_ground_motion_im_shift_figure.py",
     "scripts/rebuild_pga_shift_figure.py",
     "scripts/write_manifest.py",
     "scripts/check_release_ready.py",

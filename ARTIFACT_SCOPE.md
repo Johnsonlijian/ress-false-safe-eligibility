@@ -6,16 +6,17 @@ This repository contains derived, non-sensitive artifacts for checking the repor
 
 | Evidence item | Public artifact | What can be checked | Boundary |
 | --- | --- | --- | --- |
+| Algorithm 1 reliability-gated false-safe eligibility audit | `data/derived/calibration_gate_summary.csv`; `data/derived/calibration_gate_by_split.csv`; `data/derived/margin_robustness_by_k_tau.csv`; `data/derived/event_robustness_summary.csv`; `data/derived/ground_motion_im_shift_*.csv`; `figures/figure_4_calibration_gate_exchangeable_vs_shift.*`; `figures/figure_5_robustness_existing_scores.*`; `figures/figure_6_ground_motion_im_shift_existing_derivatives.*` | Traces the public audit surfaces for calibration behavior, margin acceptance, event robustness, and source-shift stress testing | Verifies derived audit outputs only; does not redistribute per-row predictions, model checkpoints, raw records, or response databases |
 | Calibration-gate behavior under exchangeable, event-blocked, and source-shift conditions | `data/derived/calibration_gate_summary.csv`; `data/derived/calibration_gate_by_split.csv`; `figures/figure_4_calibration_gate_exchangeable_vs_shift.*` | Selected margins, tested false-safe rates, feasibility/coverage summaries, and the plotted diagnostic | Uses already-scored predictions; does not rerun model inference |
 | Robustness across adaptation size, threshold band, and event blocks | `data/derived/margin_robustness_by_k_tau.csv`; `data/derived/event_robustness_summary.csv`; `figures/figure_5_robustness_existing_scores.*` | Reported false-safe/coverage summaries by k, threshold, margin, and worst-event block | Uses derived score tables; low-/mid-rise forward inference is not included |
-| PGA-only source-shift evidence | `data/derived/pga_shift_inputs_derived.csv`; `data/derived/pga_shift_summary.csv`; `data/derived/pga_shift_comparison.csv`; `figures/figure_6_pga_shift_existing_derivatives.*`; `scripts/rebuild_pga_shift_figure.py` | Rebuilds summary statistics and the PGA distribution figure from packaged derived values | Does not provide a complete Mw/distance/duration/Vs30 feature-space comparison |
+| Ground-motion intensity-measure source-shift evidence | `data/derived/ground_motion_im_shift_inputs_derived.csv`; `data/derived/ground_motion_im_shift_summary.csv`; `data/derived/ground_motion_im_shift_comparison.csv`; `figures/figure_6_ground_motion_im_shift_existing_derivatives.*`; `scripts/rebuild_ground_motion_im_shift_figure.py` | Rebuilds summary statistics and the multi-IM distribution figure from packaged derived values for PGA, Sa(T1), significant duration D5-95, Arias intensity, and Fourier mean period | Does not provide a complete Mw/distance/duration/Vs30 feature-space comparison |
 | Figure exports used for manuscript review | `figures/` | Confirms the figure files included with the package | Figure source depends on derived tables; raw records are excluded |
 | Public-data provenance | `DATASETS_AND_LINKS.csv` | Identifies upstream official datasets, reports, and standards links | Users must obtain raw third-party records from providers |
 | Package integrity and cleanliness | `MANIFEST.csv`; `scripts/write_manifest.py`; `scripts/check_public_package.py` | Rebuilds file hashes and checks common leakage markers | Human inspection remains required before public release |
 
 ## Intended use
 
-Use this repository to verify that the manuscript's derived calibration, robustness, and PGA-only shift artifacts are internally consistent and publicly shareable. Use upstream services listed in `DATASETS_AND_LINKS.csv` for raw data access.
+Use this repository to verify that the manuscript's derived calibration, robustness, and intensity-measure shift artifacts are internally consistent and publicly shareable. Use upstream services listed in `DATASETS_AND_LINKS.csv` for raw data access.
 
 ## Non-reproduced pipeline stages
 

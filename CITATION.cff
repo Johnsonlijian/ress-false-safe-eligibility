@@ -1,9 +1,20 @@
 cff-version: 1.2.0
-message: "If you use this reproducibility package, please cite the associated manuscript and this repository."
-title: "Reproducibility package for false-safe eligibility auditing of machine-learning seismic-demand surrogates"
+message: "If you use this reproducibility package, please cite this repository and the associated manuscript."
+title: "Reproducibility package for reliability-gated false-safe screening of seismic-demand surrogates"
 type: software
-version: 0.1.0
-date-released: 2026-06-19
+version: 1.0.0
+date-released: 2026-06-21
 authors:
-  - name: "Author metadata to be completed before public release"
+  - family-names: REN
+    given-names: Lijian
+    orcid: "https://orcid.org/0000-0003-1629-4368"
 repository-code: "https://github.com/Johnsonlijian/ress-false-safe-eligibility"
+license: MIT
+keywords:
+  - false-safe screening
+  - seismic demand
+  - reliability gate
+  - risk control
+  - selective prediction
+  - distribution shift
+abstract: "Derived tables, figure scripts, and non-sensitive reproducibility materials for a reliability-gated false-safe eligibility audit of seismic-demand surrogate screening. Raw third-party strong-motion records and active submission manuscripts are not redistributed."
